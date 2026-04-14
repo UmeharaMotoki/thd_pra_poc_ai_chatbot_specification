@@ -1,0 +1,120 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.1 Chrome/142.0.7444.265 Electron/39.8.0 Safari/537.36" version="29.6.1">
+  <diagram id="xeyCrRMqgJrSD0oVw9BE" name="ページ-1">
+    <mxGraphModel dx="1901" dy="1281" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="user" parent="1" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#1A73E8;labelBackgroundColor=none;align=center;fontStyle=1;fontSize=10;shape=mxgraph.aws4.user;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" value="👤 一般社員&#xa;ブラウザ" vertex="1">
+          <mxGeometry height="78" width="78" x="40" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="aws-cloud" parent="1" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_aws_cloud_alt;strokeColor=#232F3E;fillColor=none;verticalLabelPosition=top;align=center;verticalAlign=bottom;spacingTop=25;fontStyle=1;fontSize=14;" value="Amazon Web Services" vertex="1">
+          <mxGeometry height="1000" width="1440" x="160" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="cf" parent="aws-cloud" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#8C4FFF;labelBackgroundColor=none;align=center;fontStyle=1;fontSize=10;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.cloudfront;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" value="Amazon CloudFront&#xa;CDN・HTTPS終端" vertex="1">
+          <mxGeometry height="78" width="78" x="30" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="waf" parent="aws-cloud" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#DD344C;labelBackgroundColor=none;align=center;fontStyle=1;fontSize=10;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.waf;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" value="AWS WAF&#xa;Web Application&#xa;Firewall" vertex="1">
+          <mxGeometry height="78" width="78" x="170" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="vpc" parent="aws-cloud" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_vpc;strokeColor=#8C4FFF;fillColor=#F5F0FF;verticalLabelPosition=top;align=center;verticalAlign=bottom;spacingTop=20;fontStyle=1;fontSize=12;" value="Amazon VPC  10.0.0.0/16" vertex="1">
+          <mxGeometry height="870" width="700" x="300" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="pub-subnet" parent="vpc" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_public_subnet;strokeColor=#147EBA;fillColor=#E6F2F8;verticalLabelPosition=top;align=center;verticalAlign=bottom;spacingTop=20;fontStyle=1;fontSize=11;" value="Public Subnet  10.0.1.0/24" vertex="1">
+          <mxGeometry height="160" width="640" x="30" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="apigw" parent="pub-subnet" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#E7157B;labelBackgroundColor=none;align=center;fontStyle=1;fontSize=10;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.api_gateway;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" value="Amazon API Gateway&#xa;HTTP API・JWT認証&#xa;レート制限" vertex="1">
+          <mxGeometry height="78" width="78" x="200" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="nat" parent="pub-subnet" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#8C4FFF;labelBackgroundColor=none;align=center;fontStyle=1;fontSize=10;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.nat_gateway;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" value="NAT Gateway" vertex="1">
+          <mxGeometry height="78" width="78" x="460" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="priv-app" parent="vpc" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_private_subnet;strokeColor=#F9A825;fillColor=#FFFDE7;verticalLabelPosition=top;align=center;verticalAlign=bottom;spacingTop=20;fontStyle=1;fontSize=11;" value="Private Subnet（Application）  10.0.2.0/24" vertex="1">
+          <mxGeometry height="160" width="640" x="30" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="ecs" parent="priv-app" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#FF9900;labelBackgroundColor=none;align=center;fontStyle=1;fontSize=10;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.ecs;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" value="Amazon ECS Fargate&#xa;Python / FastAPI&#xa;RAGオーケストレーション" vertex="1">
+          <mxGeometry height="78" width="78" x="281" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="priv-db" parent="vpc" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_private_subnet;strokeColor=#F9A825;fillColor=#FFFDE7;verticalLabelPosition=top;align=center;verticalAlign=bottom;spacingTop=20;fontStyle=1;fontSize=11;" value="Private Subnet（Database）  10.0.4.0/24" vertex="1">
+          <mxGeometry height="160" width="640" x="30" y="540" as="geometry" />
+        </mxCell>
+        <mxCell id="rds" parent="priv-db" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#3F8624;labelBackgroundColor=none;align=center;fontStyle=1;fontSize=10;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.rds;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" value="Amazon RDS PostgreSQL 15&#xa;チャット履歴・ユーザー情報" vertex="1">
+          <mxGeometry height="78" width="78" x="281" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="ai-group" parent="aws-cloud" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_ml;strokeColor=#8C4FFF;fillColor=#F5F0FF;verticalLabelPosition=top;align=center;verticalAlign=bottom;spacingTop=20;fontStyle=1;fontSize=12;" value="AI・ナレッジ基盤（AWS マネージド）" vertex="1">
+          <mxGeometry height="640" width="320" x="1060" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="bedrock" parent="ai-group" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#8C4FFF;labelBackgroundColor=none;align=center;fontStyle=1;fontSize=10;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.bedrock;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" value="Amazon Bedrock&#xa;Claude 3 Haiku / Sonnet&#xa;LLM推論エンジン" vertex="1">
+          <mxGeometry height="78" width="78" x="121" y="70" as="geometry" />
+        </mxCell>
+        <mxCell id="kb" parent="ai-group" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#8C4FFF;labelBackgroundColor=none;align=center;fontStyle=1;fontSize=10;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.kendra;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" value="Bedrock Knowledge Bases&#xa;RAG・ベクトル検索管理&#xa;Titan Embeddings V2" vertex="1">
+          <mxGeometry height="78" width="78" x="121" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="oss" parent="ai-group" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#8C4FFF;labelBackgroundColor=none;align=center;fontStyle=1;fontSize=10;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.opensearch_service;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" value="OpenSearch Serverless&#xa;ベクトルDB&#xa;（Bedrock管理）" vertex="1">
+          <mxGeometry height="78" width="78" x="121" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="storage-group" parent="aws-cloud" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.aws4.group;grIcon=mxgraph.aws4.group_s3;strokeColor=#FF9900;fillColor=#FFF8E1;verticalLabelPosition=top;align=center;verticalAlign=bottom;spacingTop=20;fontStyle=1;fontSize=12;" value="Amazon S3" vertex="1">
+          <mxGeometry height="180" width="140" x="30" y="680" as="geometry" />
+        </mxCell>
+        <mxCell id="s3-front" parent="storage-group" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=none;fillColor=#FF9900;labelBackgroundColor=none;align=center;fontStyle=1;fontSize=10;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.s3;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;" value="S3 Bucket&#xa;React 静的ファイル" vertex="1">
+          <mxGeometry height="78" width="78" x="31" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="sf" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#00A1E0;strokeColor=#006FA6;fontColor=#ffffff;fontStyle=1;fontSize=10;align=center;" value="☁️ Salesforce&#xa;ワークフロー連携&#xa;（Phase 2）" vertex="1">
+          <mxGeometry height="80" width="120" x="40" y="760" as="geometry" />
+        </mxCell>
+        <mxCell id="github" parent="1" style="shape=mxgraph.logos.github;fillColor=#24292E;strokeColor=none;fontColor=#24292E;fontStyle=1;fontSize=10;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;" value="GitHub&#xa;ナレッジベース&#xa;MDファイル群" vertex="1">
+          <mxGeometry height="78" width="78" x="1660" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="e-user-cf" edge="1" parent="1" source="user" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#1A73E8;fontStyle=1;fontSize=9;" target="cf" value="HTTPS">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-cf-s3front" edge="1" parent="1" source="cf" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#FF9900;fontStyle=1;fontSize=9;dashed=1;" target="s3-front" value="静的ファイル配信">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-cf-waf" edge="1" parent="1" source="cf" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#DD344C;fontStyle=1;fontSize=9;" target="waf" value="APIリクエスト">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-waf-apigw" edge="1" parent="1" source="waf" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#E7157B;" target="apigw" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-apigw-ecs" edge="1" parent="1" source="apigw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#FF9900;fontStyle=1;fontSize=9;" target="ecs" value="ルーティング">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ecs-rds" edge="1" parent="1" source="ecs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#3F8624;fontStyle=1;fontSize=9;" target="rds" value="チャット履歴 読み書き">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ecs-kb" edge="1" parent="1" source="ecs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#8C4FFF;fontStyle=1;fontSize=9;" target="kb" value="RAGクエリ">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ecs-bedrock" edge="1" parent="1" source="ecs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#8C4FFF;fontStyle=1;fontSize=9;" target="bedrock" value="LLM推論リクエスト">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-bedrock-kb" edge="1" parent="1" source="bedrock" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#8C4FFF;fontStyle=1;fontSize=9;endArrow=block;startArrow=block;startFill=1;endFill=1;" target="kb" value="コンテキスト付き推論">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-kb-oss" edge="1" parent="1" source="kb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#8C4FFF;fontStyle=1;fontSize=9;" target="oss" value="ベクトル検索">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-kb-s3kb" edge="1" parent="1" source="kb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#FF9900;fontStyle=1;fontSize=9;" value="ドキュメント取得">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1190" y="399" />
+              <mxPoint x="1190" y="859" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e-ecs-nat" edge="1" parent="1" source="ecs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#8C4FFF;fontStyle=1;fontSize=9;dashed=1;" target="nat" value="アウトバウンド通信">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ecs-user" edge="1" parent="1" source="ecs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#1A73E8;fontStyle=1;fontSize=9;dashed=1;" target="user" value="Server-Sent Events&#xa;リアルタイム配信">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e-ecs-sf" edge="1" parent="1" source="ecs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;strokeColor=#00A1E0;fontStyle=3;fontSize=9;dashed=1;" target="sf" value="申請データ連携（Phase 2）">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zJdeT_6ysLSlb3PrvSvQ-1" edge="1" parent="1" source="kb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="github">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
